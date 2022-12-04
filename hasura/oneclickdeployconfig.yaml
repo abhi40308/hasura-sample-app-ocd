@@ -18,3 +18,5 @@ user-env:
     default: "http://httpbin.org/post"
     description: "Base url for event handlers"
     mandatory: true
+  PG_DB_URL_1:
+    default: localdev:1234
