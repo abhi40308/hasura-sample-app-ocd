@@ -20,6 +20,3 @@ user-env:
     mandatory: true
   PG_DB_URL_1:
     default: localdev:1234
-  HASURA_GRAPHQL_DATABASE_URL:
-    description: "postgres db input"
-    mandatory: true
