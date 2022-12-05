@@ -6,7 +6,7 @@ static-envs:
   HASURA_GRAPHQL_EXPERIMENTAL_FEATURES: "inherited_roles"
   HASURA_GRAPHQL_ENABLE_REMOTE_SCHEMA_PERMISSIONS: true
 
-user-env:
+user-envs:
   PG_DB_URL:
     description: "Postgres database URL"
     mandatory: true
