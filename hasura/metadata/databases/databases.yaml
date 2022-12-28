@@ -20,3 +20,14 @@
         max_connections: null
         total_max_connections: null
   tables: "!include msserver/tables/tables.yaml"
+- name: defaults
+  kind: postgres
+  configuration:
+    connection_info:
+      database_url:
+        from_env: HASURA_GRAPHQL_DATABASE_URLL1
+      isolation_level: read-committed
+      use_prepared_statements: false
+  customization:
+    naming_convention: hasura-defaults
+  tables: "!include defaults/tables/tables.yaml"
