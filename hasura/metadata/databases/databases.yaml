@@ -18,3 +18,21 @@
         max_connections: null
         total_max_connections: null
   tables: "!include mssql/tables/tables.yaml"
+- name: mssql1
+  kind: mssql
+  configuration:
+    connection_info:
+      connection_string: "somerandomestring"
+      pool_settings:
+        idle_timeout: 5
+        max_connections: null
+        total_max_connections: null
+- name: bq
+  kind: bigquery
+  configuration:
+    service_account:
+      from_env: BQ_DATA_SOURCE
+    project_id:
+      from_env: BQ_PROJECT_ID
+    datasets:
+      from_env: BQ_DATASETS
