@@ -6,6 +6,15 @@
         from_env: HASURA_GRAPHQL_DATABASE_URL
       isolation_level: read-committed
       use_prepared_statements: false
-  customization:
-    naming_convention: hasura-default
   tables: "!include default/tables/tables.yaml"
+- name: mssql
+  kind: mssql
+  configuration:
+    connection_info:
+      connection_string:
+        from_env: HASURA_GRAPHQL_MSSERVER_URL
+      pool_settings:
+        idle_timeout: 5
+        max_connections: null
+        total_max_connections: null
+  tables: "!include mssql/tables/tables.yaml"
