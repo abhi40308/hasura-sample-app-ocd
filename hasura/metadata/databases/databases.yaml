@@ -7,6 +7,22 @@
       isolation_level: read-committed
       use_prepared_statements: false
   tables: "!include default/tables/tables.yaml"
+- name: postgres2
+  kind: postgres
+  configuration:
+    connection_info:
+      database_url:
+        from_env: HASURA_GRAPHQL_DATABASE_URL
+      isolation_level: read-committed
+      use_prepared_statements: false
+- name: postgres3
+  kind: postgres
+  configuration:
+    connection_info:
+      database_url:
+        from_env: HASURA_GRAPHQL_DATABASE_URL
+      isolation_level: read-committed
+      use_prepared_statements: false
 - name: mssql
   kind: mssql
   configuration:
@@ -27,12 +43,37 @@
         idle_timeout: 5
         max_connections: null
         total_max_connections: null
-- name: bq
+- name: mssql2
+  kind: mssql
+  configuration:
+    connection_info:
+      connection_string: "somerandomestring"
+      pool_settings:
+        idle_timeout: 5
+        max_connections: null
+        total_max_connections: null
+- name: bq1
   kind: bigquery
   configuration:
     service_account:
-      from_env: BQ_DATA_SOURCE
+      from_env: BQ_DATA_SOURCE1
     project_id:
-      from_env: BQ_PROJECT_ID
+      from_env: BQ_PROJECT_ID1
     datasets:
-      from_env: BQ_DATASETS
+      from_env: BQ_DATASETS1
+- name: bq2
+  kind: bigquery
+  configuration:
+    service_account:
+      from_env: BQ_DATA_SOURCE2
+    project_id:
+      from_env: BQ_PROJECT_ID2
+    datasets: "test"
+- name: bq3
+  kind: bigquery
+  configuration:
+    service_account:
+      from_env: BQ_DATA_SOURCE3
+    project_id: "project"
+    datasets:
+      from_env: BQ_DATASETS3
