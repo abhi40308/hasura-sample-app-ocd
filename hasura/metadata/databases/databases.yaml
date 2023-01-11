@@ -12,7 +12,7 @@
   configuration:
     connection_info:
       database_url:
-        from_env: HASURA_GRAPHQL_DATABASE_URL
+        from_env: HASURA_GRAPHQL_DATABASE_URL2
       isolation_level: read-committed
       use_prepared_statements: false
 - name: postgres3
@@ -20,7 +20,7 @@
   configuration:
     connection_info:
       database_url:
-        from_env: HASURA_GRAPHQL_DATABASE_URL
+        from_env: HASURA_GRAPHQL_DATABASE_URL3
       isolation_level: read-committed
       use_prepared_statements: false
 - name: mssql
@@ -47,7 +47,7 @@
   kind: mssql
   configuration:
     connection_info:
-      connection_string: "somerandomestring"
+      connection_string: HASURA_GRAPHQL_MSSERVER_URL2
       pool_settings:
         idle_timeout: 5
         max_connections: null
