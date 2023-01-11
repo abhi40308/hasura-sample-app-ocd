@@ -47,7 +47,8 @@
   kind: mssql
   configuration:
     connection_info:
-      connection_string: HASURA_GRAPHQL_MSSERVER_URL2
+      connection_string:
+        from_env: HASURA_GRAPHQL_MSSERVER_URL
       pool_settings:
         idle_timeout: 5
         max_connections: null
