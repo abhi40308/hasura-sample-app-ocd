@@ -7,9 +7,6 @@ static-env:
   HASURA_GRAPHQL_ENABLE_REMOTE_SCHEMA_PERMISSIONS: true
 
 user-env:
-  PG_DB_URL:
-    description: "Postgres database URL"
-    mandatory: true
   ACTION_WEBHOOK_URL:
     default: "http://localhost:3000"
     description: "Action webhook url"
@@ -18,5 +15,3 @@ user-env:
     default: "http://httpbin.org/post"
     description: "Base url for event handlers"
     mandatory: true
-  PG_DB_URL_1:
-    default: localdev:1234

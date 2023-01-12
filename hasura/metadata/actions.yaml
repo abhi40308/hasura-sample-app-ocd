@@ -1,16 +1,6 @@
-actions:
-  - name: actionName
-    definition:
-      kind: synchronous
-      handler: http://host.docker.internal:3000
-  - name: actionName2
-    definition:
-      kind: synchronous
-      handler: http://host.docker.internal:3000
+actions: []
 custom_types:
   enums: []
-  input_objects:
-    - name: SampleInput
-  objects:
-    - name: SampleOutput
+  input_objects: []
+  objects: []
   scalars: []

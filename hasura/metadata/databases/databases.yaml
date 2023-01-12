@@ -7,22 +7,26 @@
       isolation_level: read-committed
       use_prepared_statements: false
   tables: "!include default/tables/tables.yaml"
-- name: postgres2
-  kind: postgres
+- name: bigquery
+  kind: bigquery
+  configuration:
+    datasets:
+      from_env: BIGQUERY_DATASETS
+    global_select_limit: "1000.0"
+    project_id:
+      from_env: BIGQUERY_PROJECT_ID
+    service_account:
+      from_env: BIGQUERY_SERVICE_ACCOUNT
+  tables: "!include bigquery/tables/tables.yaml"
+- name: citus
+  kind: citus
   configuration:
     connection_info:
       database_url:
-        from_env: HASURA_GRAPHQL_DATABASE_URL2
+        from_env: CITUS_DB_URL
       isolation_level: read-committed
       use_prepared_statements: false
-- name: postgres3
-  kind: postgres
-  configuration:
-    connection_info:
-      database_url:
-        from_env: HASURA_GRAPHQL_DATABASE_URL3
-      isolation_level: read-committed
-      use_prepared_statements: false
+  tables: "!include citus/tables/tables.yaml"
 - name: mssql
   kind: mssql
   configuration:
@@ -34,47 +38,12 @@
         max_connections: null
         total_max_connections: null
   tables: "!include mssql/tables/tables.yaml"
-- name: mssql1
-  kind: mssql
+- name: pg_db_2
+  kind: postgres
   configuration:
     connection_info:
-      connection_string: "somerandomestring"
-      pool_settings:
-        idle_timeout: 5
-        max_connections: null
-        total_max_connections: null
-- name: mssql2
-  kind: mssql
-  configuration:
-    connection_info:
-      connection_string:
-        from_env: HASURA_GRAPHQL_MSSERVER_URL2
-      pool_settings:
-        idle_timeout: 5
-        max_connections: null
-        total_max_connections: null
-- name: bq1
-  kind: bigquery
-  configuration:
-    service_account:
-      from_env: BQ_DATA_SOURCE1
-    project_id:
-      from_env: BQ_PROJECT_ID1
-    datasets:
-      from_env: BQ_DATASETS1
-- name: bq2
-  kind: bigquery
-  configuration:
-    service_account:
-      from_env: BQ_DATA_SOURCE2
-    project_id:
-      from_env: BQ_PROJECT_ID2
-    datasets: "test"
-- name: bq3
-  kind: bigquery
-  configuration:
-    service_account:
-      from_env: BQ_DATA_SOURCE3
-    project_id: "project"
-    datasets:
-      from_env: BQ_DATASETS3
+      database_url:
+        from_env: HASURA_POSTGRES_DB_2
+      isolation_level: read-committed
+      use_prepared_statements: false
+  tables: "!include pg_db_2/tables/tables.yaml"
