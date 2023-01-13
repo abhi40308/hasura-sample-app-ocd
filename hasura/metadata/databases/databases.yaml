@@ -3,7 +3,7 @@
   configuration:
     connection_info:
       database_url:
-        from_env: HASURA_GRAPHQL_DATABASE_URL
+        from_env: PG_DATABASE_URL
       isolation_level: read-committed
       use_prepared_statements: false
   tables: "!include default/tables/tables.yaml"
@@ -32,7 +32,7 @@
   configuration:
     connection_info:
       connection_string:
-        from_env: HASURA_GRAPHQL_MSSERVER_URL
+        from_env: MSSERVER_URL
       pool_settings:
         idle_timeout: 5
         max_connections: null
@@ -43,7 +43,7 @@
   configuration:
     connection_info:
       database_url:
-        from_env: HASURA_POSTGRES_DB_2
+        from_env: PG_DATABASE_URL_2
       isolation_level: read-committed
       use_prepared_statements: false
   tables: "!include pg_db_2/tables/tables.yaml"
