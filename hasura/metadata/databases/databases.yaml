@@ -38,12 +38,12 @@
         max_connections: null
         total_max_connections: null
   tables: "!include mssql/tables/tables.yaml"
-- name: pg_db_2
-  kind: postgres
-  configuration:
-    connection_info:
-      database_url:
-        from_env: PG_DATABASE_URL_2
-      isolation_level: read-committed
-      use_prepared_statements: false
-  tables: "!include pg_db_2/tables/tables.yaml"
+# - name: pg_db_2
+#   kind: postgres
+#   configuration:
+#     connection_info:
+#       database_url:
+#         from_env: PG_DATABASE_URL_2
+#       isolation_level: read-committed
+#       use_prepared_statements: false
+#   tables: "!include pg_db_2/tables/tables.yaml"
